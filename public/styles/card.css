@@ -1,0 +1,60 @@
+.card {
+  background-color: white;
+  
+
+  padding: 32px 24px;
+  margin: 32px auto;
+
+  box-shadow: 0px 4px 8px -4px rgba(247, 200, 101, 0.952);
+  border-radius: 4px;
+
+  width: 90%;
+  position: relative;
+}
+
+
+
+.card h3{
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Odibee Sans', cursive;
+  color: var(--color-first); 
+
+  text-shadow: 1px 1px 1px var(--color-second);
+
+  margin-bottom: 16px;
+}
+
+/* .card::after,
+.card::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.card::before{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  transform: scaleY(0);
+}
+
+.card::before{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  transform: scaleX(0);
+}
+
+.card:hover::before{
+  transform: scaleY(1);
+}
+
+.card:hover::after{
+  transform: scalex(1);
+} */

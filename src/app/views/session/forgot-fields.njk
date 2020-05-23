@@ -1,0 +1,16 @@
+
+<div class="item">
+  <div>E-mail</div>
+  <div class = "input">
+      <input 
+        type="email"
+        name="email"
+        placeholder="Digite o e-mail de cadastro"
+        value="{{user.email}}"
+        onblur="Validate.apply(this,'isEmail')"
+        required="required"
+        oninvalid="this.setCustomValidity('Informe o E-mail da conta.')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>

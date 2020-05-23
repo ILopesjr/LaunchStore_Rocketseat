@@ -1,0 +1,92 @@
+{% extends "layout.njk" %}
+
+{% import "parts/card.njk" as card %}
+
+{% block content %}
+
+  {% call card.render('', 'product_single container' ) %}
+    <div class="gallery">
+      <div class="highlight">
+        {% if not product.img %}
+          <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO">
+        {%else%}
+          <img 
+            src="{{product.img}}" 
+            alt="{{product.files.name}}"
+            onclick = "Lightbox.open()"
+          >
+        {% endif %}
+        <div class="lightbox-target">
+          <img src="{{product.img}}" alt="{{product.files.name}}">
+          <a 
+            href="#" 
+            class="lightbox-close"
+            onclick = "Lightbox.close()"
+          >
+            <i class="far fa-times-circle"></i>
+          </a>
+        </div>
+
+      </div>
+      <div class="gallery-preview">
+        {% for file in product.files %}
+          <img 
+            src="{{file.src}}"
+            alt="{{file.name}}"
+            {% if loop.index0 == 0 %}
+              class = "active"
+            {% endif %}
+            onclick="ImageGallery.setImage(event)"
+          >
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <div class="info">
+      <h1>{{product.name}}</h1>
+
+      <div class="published">
+        <p>publicado em {{product.published.day}} às {{product.published.hour}}</p>
+      </div>
+
+      <div class="description">
+        <p>{{product.description}}</p>
+      </div>
+
+      <div class="price_buy">
+        <div class="price">
+          <h4>{{product.formattedPrice}}</h4>
+          {% if product.old_price > product.price %}
+          <span class="old_prive">{{product.formattedOldPrice}}</span>
+          {% endif %}
+        </div>
+
+        <div class="buy">
+          {% if product.user_id == session.userID %}
+            <div class="infor">
+              <p class="user_infor">Seu Produto</p>
+              <p class="user_infor"> <span>Quantidade:</span> {{product.quantity}}</p>
+              <p class="user_infor"><span>Status:</span>
+                {%if product.status == 0 %}
+                Indisponível
+                {% else %}
+                Disponível
+                {%endif%} 
+               </p>
+            </div>
+          {% elif product.quantity == 0 %}
+            <p class="unavailable">Fora de Estoque</p>
+          {% elif product.status == 0 %}
+            <p class="unavailable">Indisponível</p>
+          {% else %}
+            <form action="/cart/{{product.id}}/add-one" method="post">
+              <button class="button">Adicionar ao Carrinho</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endcall %}
+
+{%endblock%}

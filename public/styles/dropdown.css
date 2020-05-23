@@ -1,0 +1,101 @@
+.dropdown-container {
+  position: relative;
+
+}
+
+.dropdown-container:hover .dropdown{
+  top: 25px;
+  opacity: 1;
+  visibility: initial;
+}
+
+ul.dropdown{
+  position: absolute;
+  top: 0px;
+  z-index: 100;
+
+  width: 130px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #e3e3e3;
+
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, .3);
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms;
+  
+}
+
+
+ul.dropdown li a,
+ul.dropdown li button{
+  color: #777777;
+  background-color: #e3e3e3;
+
+  padding: 4px 8px;
+  cursor: pointer;
+
+  border-radius: 4px;
+  border-top: 1px solid #eee;
+  
+  display: inline-block;
+  width: 100%;
+
+  align-items: center;
+
+}
+
+ul.dropdown li:hover a,
+ul.dropdown li:hover button{
+  color: white;
+  background-color: rgba(252, 134, 0, 0.52);
+  font-weight: bold;
+  transition: 300ms ease-in-out;
+}
+
+ul.dropdown li:hover button.sold{
+  background-color: rgba(11, 139, 11, 0.52);
+  font-size: 16px;
+
+}
+
+ul.dropdown li:hover button.cancel{
+  background-color: rgba(255, 10, 10, 0.52);
+  font-size: 16px;
+
+}
+
+/* --- ACTIONS --- */
+
+.actions.dropdown-container span {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 130px;
+  padding: 4px 12px;
+
+  color: #333;
+  background-color: #e1e1e1;
+  
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, .3);
+
+
+  justify-self: center;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase; 
+
+}
+
+.actions.dropdown-container span:hover{
+  background-color: #e9e9e9;
+  cursor: pointer;
+}

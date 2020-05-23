@@ -1,0 +1,391 @@
+.product-create,
+.product-edit{
+  max-width: 700px;
+}
+
+section.form .header h3{
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Odibee Sans', cursive;
+
+  text-shadow: 1px 1px 1px var(--color-first);
+} */
+
+form .item{
+  margin-bottom: 16px;
+}
+
+form .item > div:nth-child(1){
+  color: #777;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  margin: 8px 0;
+}
+
+form .item .input input,
+form .item input[type="text"],
+form .item input[type="number"],
+form .item textarea,
+form .item select{
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 16px;
+
+  box-shadow: 2px 2px 10px -8px rgba(60,60,60,.5);
+  border: 1px solid #efefef;
+  border-radius: 4px;
+
+}
+
+form .item select {
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: var(--color-second-contrast);
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FC8600%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+  linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+
+}
+
+form .item textarea{
+  min-height: 150px;
+}
+/* test */
+
+form .item label{
+  padding: 8px 16px;
+}
+
+.product-edit form .item .available{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 250px;
+  justify-items: self-start;
+}
+
+form .item label:hover,
+form .item input[type="radio"]:hover{
+  cursor: pointer;
+}
+
+form .item input[type="radio"]:checked{
+  background-color: aqua;
+}
+
+/* ---- */
+form .item span{
+  background-color: var(--color-fourth);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 16px;
+  transition: all 400ms;
+
+}
+
+form .item span:hover{
+  background-color: rgb(8, 88, 218);
+
+}
+
+form .fields {
+  margin-bottom: 66px;
+}
+
+/* === PHOTOS UPLOAD === */
+
+form .item #photos-upload{
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  width: 200px;
+}
+
+form .item #photos-upload p{
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px -6px #333;
+  background-color: var(--color-fourth);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.2s;
+
+}
+
+
+form .item #photos-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+}
+
+
+form .item #photos-preview{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin: 8px 0;
+}
+
+
+form .item #photos-preview img{
+  /* A imagem vai ocupar todo o espaço da largura e tera um limite de 150px de altura, para não esticar, o object-fit: cover irá cortar a altura da image quem passar dos 150px */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+#photos-preview .photo{
+  position: relative;
+}
+
+#photos-preview .photo i{
+  position:absolute;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 400%;
+  color: rgba(255, 0, 0, 0.5);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  /* só funciona  com display: flex*/
+  /* alinha o elemento no eixo Y */
+  align-items: center; 
+  /* alinha o elemento no eixo X */
+  justify-content: center;
+
+  cursor: pointer;
+  opacity: 0;
+  transition: 400ms;
+}
+
+#photos-preview .photo:hover i{
+  opacity: 1;
+}
+
+/* === PRODUCT VIEW === */
+
+.product_single .card-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+}
+
+
+/* PRODUCT SINGLE - GALLERY IMAGES */
+
+.product_single .gallery{
+  width: 100%;
+}
+
+.product_single .highlight > img {
+  width: 100%;
+  height: 280px;
+
+  object-fit: none;
+  object-position: 50% 50%;
+
+  border: 1px solid #efefef;
+
+  cursor: zoom-in;
+
+}
+.product_single .gallery-preview{
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.product_single .gallery-preview img:hover,
+.product_single .gallery-preview img.active{
+  opacity: 1;
+}
+
+.product_single .gallery-preview img {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #efefef;
+
+
+  object-fit: cover;
+  opacity: 0.5;
+
+  transition: all 400ms;
+  cursor: pointer;
+
+}
+/* LIGHTBOX */
+
+.product_single .highlight .lightbox-target {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,.6);
+
+  overflow: hidden;
+  z-index: 100;
+
+  opacity: 0;
+  transition: opacity 400ms;
+
+}
+
+.product_single .highlight .lightbox-target img{
+  margin: auto;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: white;
+  border: 4px solid var(--color-first);
+  border-radius: 4px;
+  width: 90%;
+  height: 90%;
+
+  object-fit: contain;
+}
+
+.product_single .highlight a.lightbox-close {
+  width: 50px;
+  height: 50px;
+  /* background-color: white; */
+
+  position: absolute;
+  right: 0;
+  top: -80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 400ms;
+}
+
+.product_single .highlight a.lightbox-close i{
+  color: var(--color-first);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+/* ---- */
+
+.product_single .info{
+  display: grid;
+  grid-template-rows: auto 40px 2fr 1fr;
+}
+
+.product_single .info h1{
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  /* text-align: center; */
+  font-family: 'Odibee Sans', cursive;
+
+  text-shadow: 1px 1px 1px var(--color-first);
+}
+
+.product_single .info .published{
+  color:#777;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+}
+
+.product_single .price_buy{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-top: auto;
+
+padding-top: 8px;
+border-top: 1px solid #e5e5e5;
+}
+
+.price_buy .price{
+  display: flex;
+  align-items: initial;
+}
+
+.price_buy .price h4 {
+font-size: 24px;
+color: #333;
+}
+
+.price_buy .price span{
+  font-style: italic;
+  text-decoration: line-through;
+  color: lightcoral;
+  margin: 0px 8px;
+}
+
+.price_buy .buy span:first-child{
+  font-weight: bold;
+  color: #777;
+}
+
+.price_buy .buy p:first-child{
+  font-weight: bold;
+  color: #333;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid rgba(119, 119, 119, .2);
+  margin-bottom: 4px;
+}
+
+.price_buy .buy{
+  color: #333;
+}
+
+.price_buy .buy .button{
+  background-color: var(--color-fourth);
+  transition: all 400ms;
+}
+
+.price_buy .buy .button:hover{
+  background-color: rgb(8, 88, 218);
+}

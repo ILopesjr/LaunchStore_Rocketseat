@@ -1,0 +1,98 @@
+.user-register,
+.user-dashboard {
+  max-width: 600px;
+}
+
+.users-ads {
+  max-width: 900px;
+}
+
+.users-ads .items{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  padding: 16px 0 ;
+}
+
+.users-ads .item{
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  padding: 8px 16px;
+  transition: all 0.2s;
+
+}
+
+.users-ads .items .item:hover{
+  background-color: rgba(249, 249, 229, .5);
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 4px rgba(228, 148, 57, 0.5);
+}
+
+.users-ads .item .image{
+  width: 100px;
+  height: 100px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px -4px black;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.users-ads .item .info{
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+}
+
+.users-ads .info .title{
+  font-size: 16px;
+  font-weight: normal;
+  color: rgb(74, 74, 74);
+
+  margin-bottom:  4px;
+}
+
+.users-ads .info .price{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(74, 74, 74);
+
+  margin-bottom:  4px;
+}
+.users-ads .info .created,
+.users-ads .info .updated{
+  /* font-size: 12px; */
+  font-weight: normal;
+  color: rgb(74, 74, 74);
+}
+
+.users-ads .info .action{
+  display: flex;
+  margin-top: auto;
+  justify-content: space-evenly;
+}
+
+.users-ads .action a{
+  width: 40%;
+  background-color: var(--color-first);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: block;
+  margin: 4px;
+  transition: all 0.2s;
+}
+
+.users-ads .action a:hover{
+  background-color: rgb(163, 87, 1);
+}

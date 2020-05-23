@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+{% import "parts/card.njk" as cards %}
+{% import "parts/cart-empty.njk" as cartEmpty %}
+
+{% block content %}
+
+{% if products.length < 1 %}
+
+  {% call cartEmpty.render('ads') %}
+    <h2>Vamos adicionar um anúncio? </h2>
+  {% endcall %}
+
+{% else %}
+
+  {% call cards.render('Meus Anúncios', 'users-ads container')%}
+    <div class="items">
+      {% for product in products %}
+        <div class="item">
+          <div class="image"
+          style="background-image: url({{product.img}})"
+          >
+          </div>
+
+          <div class="info">
+            <div class="title">{{ product.name }}</div>
+            <div class="price">{{ product.formattedPrice }}</div>
+            <div class="created">Criado em {{ product.formattedCreatedAt }}</div>
+            <div class="updated">Atualizado em {{ product.formattedUpdatedAt }}</div>
+          
+            <div class="action">
+              <a href="/products/{{product.id}}" >Ver</a>
+              <a href="/products/{{product.id}}/edit" >Editar</a>
+            </div>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+  {% endcall %}
+  
+{% endif %}
+
+
+{% endblock content %}

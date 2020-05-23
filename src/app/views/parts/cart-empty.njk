@@ -1,0 +1,38 @@
+{% macro render(link) %}
+  <section class="cart-empty container">
+
+      {% if link == 'search' %}
+        <h2> Nenhum pedido realizado. </h2>
+      {% elif link == 'ads' %}
+        <h2> Nenhum produto cadastrado. </h2>
+      {% else %}
+        <h2> Nenhuma solicitação realizada. </h2>
+      {% endif %}
+
+      <div class="circ">
+        <div class="load-lottie"></div>
+        {% if link == 'search' %}
+          <a href="/products/search"><i class="fas fa-cart-plus fa-4x"></i></a>
+        {% else %}
+          <a href="/products/create"><i class="fas fa-plus-circle fa-4x"></i></a>
+        {% endif %}
+      </div>
+
+      <div class="cart-content">
+        {{ caller() }}
+      </div>
+
+      <script src="/lottie/lottie.min.js"></script>
+
+      <script>
+        lottie.loadAnimation({
+          container: document.querySelector('.load-lottie'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: '/lottie/1140-yelloader.json'
+        }).setSpeed(.8) 
+      </script>
+  
+  </section>
+{% endmacro %}

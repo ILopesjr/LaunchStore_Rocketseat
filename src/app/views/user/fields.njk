@@ -1,0 +1,116 @@
+<div class="item">
+  <div>Nome Completo</div>
+  <div class = "input">
+      <input 
+        type="text"
+        name="name"
+        placeholder="Digite o seu nome completo"
+        value="{{user.name}}"
+        required="required"
+        oninvalid="this.setCustomValidity('Preencha seu nome!')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>
+
+<div class="item">
+  <div>E-mail</div>
+  <div class = "input">
+      <input 
+        type="email"
+        name="email"
+        placeholder="Digite o seu e-mail"
+        value="{{user.email}}"
+        onblur="Validate.apply(this,'isEmail')"
+        required="required"
+        oninvalid="this.setCustomValidity('Preencha seu E-mail!')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>
+
+<div class="item">
+  <div>Senha</div>
+  <div class = "input">
+      <input 
+        type="password"
+        name="password"
+        {% if not user.id %}
+          placeholder="Digite uma senha"   
+        {% else %}
+          placeholder="Digite sua senha para atualizar o cadastro."   
+        {% endif %}
+        required="required"
+        oninvalid="this.setCustomValidity('Insira uma Senha!')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>
+
+{% if not user.id %}
+  <div class="item">
+    <div>Confirmar Senha</div>
+    <div class = "input">
+      <input 
+        type="password"
+        name="passwordCheck"
+        placeholder="Repita a senha"
+        required="required"
+        oninvalid="this.setCustomValidity('Repita a Senha!')"
+        onchange="this.setCustomValidity('')"
+      >
+    </div>
+  </div>
+
+{% endif %}
+
+<div class="item">
+  <div>CPF ou CNPJ</div>
+  <div class = "input">
+      <input 
+        type="text"
+        name="cpf_cnpj"
+        placeholder="Digite o seu documento"
+        value="{{user.cpf_cnpj}}"
+        onkeydown="Mask.apply(this,'cpfCnpj')"
+        onblur="Validate.apply(this,'isCpfCnpj')"
+        required="required"
+        oninvalid="this.setCustomValidity('Informe os dados!')"
+        onchange="this.setCustomValidity('')"
+
+      >
+  </div>
+</div>
+
+<div class="item">
+  <div>CEP</div>
+  <div class = "input">
+      <input 
+        type="text"
+        name="cep"
+        placeholder="99999-999"
+        value="{{user.cep}}"
+        onkeydown="Mask.apply(this,'cep')"
+        onblur="Validate.apply(this,'isCep')"
+        required="required"
+        oninvalid="this.setCustomValidity('Informe seu CEP!')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>
+
+<div class="item">
+  <div>Endereço</div>
+  <div class = "input">
+      <input 
+        type="text"
+        name="address"
+        placeholder="Digite o seu endereço completo"
+        value="{{user.address}}"
+        required="required"
+        oninvalid="this.setCustomValidity('Informe seu Endereço!')"
+        onchange="this.setCustomValidity('')"
+      >
+  </div>
+</div>
+

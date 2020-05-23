@@ -1,0 +1,232 @@
+.cart .header{
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 30px;
+  gap: 8px;
+  align-items: center;
+
+  margin-bottom: 16px;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+
+
+}
+
+.cart .header p{
+  text-align: center;
+}
+
+.cart .header p:nth-child(1){
+  text-align: left;
+  margin-left: 150px;
+}
+
+.cart .item{
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 30px;
+  gap: 8px;
+  align-items: center;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+.cart .item a:hover{
+  background-color: rgba(249, 249, 229, .2);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 2px rgba(228, 148, 57, 0.2);
+}
+
+
+.cart .item > a{
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.cart .item img{
+  width: 100px;
+  height: 100px;  
+  object-fit: cover;
+  
+  margin-right: 20px;
+
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+
+  box-shadow: 2px 2px 4px -4px black;
+
+}
+
+.cart .item .title,
+.cart-empty h2{
+  color: #333;
+  font-size: 18px;
+}
+
+.cart .item .price{
+  font-size: 18px;
+  text-align: center;
+
+  color: #333;
+}
+
+.cart .quantity-control, .cart .item .trash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart .quantity-control .quantity{
+  margin: 0 8px;
+}
+
+.cart .quantity-control i {
+  padding: 4px 4px;
+}
+
+.cart .items i{
+  color: #333;
+}
+
+.cart .items i:hover{
+  color: var(--color-first);
+}
+
+.cart .items button:hover{
+  cursor: pointer;
+}
+
+.cart button.delete i{
+  color: rgb(172, 172, 172);
+}
+
+.cart button.delete i:hover{
+  color: red;
+}
+
+.cart .total{
+  margin-top: 16px;
+  text-align: right;
+}
+
+.cart .total p{
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #333;
+}
+
+.cart .total span{
+  font-size: 22px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.cart .action{
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 16px;
+}
+
+.cart .button.order, .cart .button.shop{
+  width: 300px;
+} 
+
+.cart .button.order{
+  background-color: rgb(36, 195, 36);
+}
+
+.cart .button.order:hover{
+  background-color: rgb(11, 139, 11);
+}
+
+/* Cart Vazio */
+
+.cart-empty.container {
+  position: relative;
+  text-align: center;
+  height: 400px;
+  width: 650px;
+
+  background-color: white;
+
+  padding: 32px 24px;
+  margin: 32px auto;
+
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, .6);
+  border-radius: 4px;
+
+}
+
+.cart-empty .circ{
+  margin: 30px auto;
+  position: relative;
+}
+
+.cart-empty i{
+  padding: 8px 16px;
+  margin: 60px auto;  
+}
+
+
+.cart-empty a{
+  position: relative;
+  z-index: 100;
+  color: rgb(255, 179, 0);
+  transition: all 400ms;
+}
+
+.cart-empty a:hover{
+  color: rgb(175, 125, 9);
+}
+
+
+.cart-empty .load-lottie{
+  position: absolute;
+  height: 200px;
+}
+
+/* --- MENU --- */
+
+.cart .cart-status-info{
+  border-radius: 25%;
+}
+
+li.cart a{
+  position: relative;
+}
+
+li.cart a span{
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  
+  background: var(--color-first);
+  border-radius: 50%;
+  
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: bold;
+  
+  transition: 300ms ;
+}
+
+li.cart a:hover span{
+  background: red;
+  color: white;
+}

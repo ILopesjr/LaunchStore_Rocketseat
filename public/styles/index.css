@@ -1,0 +1,270 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;  
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+:root{
+  --color-first: rgba(247, 200, 101, 0.952);
+  --color-second: #7159c1;
+  --color-second-contrast: #ffffff;
+  --color-third: #f9f9f9;
+  --color-fourth: rgb(127, 172, 245);
+  --color-fifth:  rgb(228, 44, 34);
+
+}
+
+
+html, body{
+  min-height: 100vh;
+}
+
+a:hover {
+ cursor: pointer;
+}
+
+
+body{
+  background-color: var(--color-third);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+header, footer {
+  width: 100%;
+  padding: 32px 0;
+  background-color: var(--color-second);
+  color: white;
+  text-align: center;
+}
+
+footer{
+  /* junto com o display flex do body faz o footer ficar sempre na base da página */
+  margin-top: auto;
+}
+
+
+header div.container{
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  column-gap: 80px;
+  align-items: center;
+}
+
+header div.container a{
+  justify-self: center;
+}
+
+
+/* === LOGO === */
+
+header .logo h1{
+  font-family: 'Odibee Sans', cursive;
+  color:var(--color-first);
+  font-size: 46px;
+  line-height: 46px;
+  letter-spacing: 2px;
+
+}
+
+header .logo h2 {
+  color: var(--color-second-contrast);
+  line-height: 16px;
+  letter-spacing: 2px;
+}
+
+.button{
+  width: 100%;
+  background-color: var(--color-first);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 4px;
+  display: block;
+  margin: 16px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* alinhar o button na posição mais baixa  */
+  align-self: end;
+}
+
+.button:hover{
+  background-color: rgb(204, 110, 2);
+}
+
+.button.update{
+  background-color: var(--color-fourth);
+}
+
+.button.update:hover{
+  background-color: rgb(8, 88, 218);
+}
+
+.button.delete{
+  background-color:rgba(177, 175, 175, 0.781)
+}
+
+.button.delete:hover{
+  background-color: var(--color-fifth);
+}
+
+/* === HEADER SEARCH === */
+
+.search input {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* === MENU === */
+
+nav.primary ul{
+  /* fazer os elementos da lista ficarem na mesma linha */
+  display: flex;
+  /* aplicar espaço dinamico entre os elementos */
+  justify-content: space-around;
+  margin: 0 32px;
+
+}
+
+nav.primary ul li a{
+  /* forçar o icone ficar ao lado do texto */
+  display: flex;
+  /* alinha o icone e texto na mesma altura Y */
+  align-items: center;
+  /* inverter o alinhamento do display flex para coluna */
+  flex-direction: column;
+  color: var(--color-second-contrast);
+
+}
+
+nav.primary ul li a:hover{
+  color: var(--color-first);
+  transition: 300ms ease-in-out;
+}
+
+nav.primary i{
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/* === SHOP === */
+
+.shop h2{
+  margin: 48px 0 32px;
+
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  /* text-align: center; */
+  font-family: 'Odibee Sans', cursive;
+
+  text-shadow: 1px 1px 1px var(--color-first);
+
+}
+
+.shop .items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  /* align-items: end; */
+}
+
+.shop .product{
+  display: grid;
+}
+
+.shop .product .image{
+  /* perfect 16:9 ratio - (9 / 16 = 0.5625) */
+  padding-top: 56.25%;
+
+  /* só é possível realizar essas configurações abaixo deixo o background-image atribuído no html(njk) home>index */
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.shop .items h4{
+  margin: 8px 0;
+  color: #999;
+
+}
+
+.shop .items .price{
+  margin-top: 12px;
+  display: flex;
+}
+.shop .items p{
+  font-weight: 300;
+  font-size: 24px;
+  color: #101010;
+
+}
+
+.shop .items .old-price p{
+  font-style: italic;
+  font-size: 18px;
+  text-decoration: line-through;
+  margin-left: 8px;
+  color: lightcoral;
+}
+
+/* === BODY SEARCH === */
+
+.search-products.container{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+
+.search-products.container aside{
+  margin: 48px 0 32px;
+
+}
+
+.search-products aside h2{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.search-products aside p{
+  margin-top: 8px;
+
+}
+.search-products .categories{
+  margin-top: 32px;
+
+}
+
+.search-products .categories h4{
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.search-products .categories ul{
+  margin-top: 8px;
+
+}
+
+
+.prymary .cart-status-info{
+  border-radius: 25%;
+  background: red;
+}

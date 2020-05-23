@@ -1,0 +1,287 @@
+.orders {
+  --status-open:rgb(0, 143, 238);
+  --status-sold: rgb(11, 139, 11);
+  --status-canceled: rgb(255, 10, 10);
+}
+
+
+.order-success,
+.order-error {
+  padding: 0;
+  padding-bottom: 30px;
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
+
+.order-success h2,
+.order-error h2{
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.order-success p,
+.order-error p {
+  color: #777;
+}
+
+.order-success .success-lottie,
+.order-error .error-lottie{
+  height: 200px;
+}
+
+.order-success .success-lottie{
+  margin-bottom: 10px;
+
+}
+
+.order-error .error-lottie{
+  height: 160px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+
+.order-success .button,
+.order-error .button {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.order-success .button{
+  background-color: rgb(36, 195, 36);
+
+}
+
+.order-success .button:hover{
+  background-color: rgb(11, 139, 11);
+}
+
+.order-error .button{
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.order-error .button:hover{
+  background-color: rgba(150, 0, 0, 0.8);
+}
+
+/* -- SEUS PEDIDOS -- */
+
+.card.orders.container,
+.card.container{
+  width: 900px;
+}
+
+.card-content .items .item-container:nth-child(even){
+  background-color: rgba(200, 200, 200, 0.1);
+  border-radius: 16px;
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: 1fr auto auto 100px 140px;
+  gap: 8px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 8px 8px;
+}
+
+.item-container:hover{
+  background-color: rgba(249, 249, 229, .5);
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 4px rgba(228, 148, 57, 0.5);
+}
+
+.item-container .item{
+  display: flex;
+}
+
+.item-container .quantity,
+.item-container .total{
+padding: 0 8px;
+}
+
+.item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px -4px black;
+
+    align-self: center;
+    justify-self: center;
+}
+
+.item div{
+  margin-left: 8px;
+}
+
+.item div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+
+.item .title,
+.item .price,
+.item .updated-at{
+  margin-bottom: 4px;
+}
+.item .title{
+  font-size: 18px;
+}
+
+.item .price{
+  font-weight: 600;
+  color: #777;
+}
+
+.item .updated-at{
+  margin-top: auto;
+  
+  color: #555;
+  font-size: 12px;
+}
+.item-container .total{
+  font-weight: bold;
+  color: #333;
+}
+
+.item-container .status{
+  justify-self: center;
+
+  color: white;
+
+  border-radius: 16px;
+  padding: 4px 12px;
+
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.item-container .status.open{
+  background-color: var(--status-open);
+
+}
+
+.item-container .status.sold{
+  background-color: var(--status-sold);
+}
+
+.item-container .status.canceled{
+  background-color: var(--status-canceled);
+}
+
+/* --- DETAILS --- */
+
+.order-detail.orders.container{
+  width: 700px;
+}
+
+.order-detail .info{
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  gap: 16px;
+
+  margin-bottom: 16px;
+  font-weight: 300;
+
+}
+
+.order-detail .info h4{
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  margin-bottom: 8px;
+
+}
+
+.order-detail .info .status {
+  text-align: right;
+}
+
+.order-detail .info .status.open h2{
+  color: var(--status-open);
+}
+
+.order-detail .info .status.sold h2{
+  color: var(--status-sold);
+}
+
+.order-detail .info .status.canceled h2{
+  color: var(--status-canceled);
+}
+
+.order-detail .info .status  h2{
+  font-size: 18px;
+}
+
+.order-detail .info .status  p{
+  font-size: 12px;
+  color: #777;
+}
+
+.order-detail .product{
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  padding: 16px 0;
+  margin-bottom: 16px;
+
+}
+
+
+.order-detail .product img{
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+  margin: auto 8px;
+
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+
+  box-shadow: 2px 2px 4px -4px black;
+}
+
+.order-detail .product .price{
+  flex: 1;
+
+  color: #333;
+  font-weight: bold;
+  text-align: right;
+}
+
+.order-detail .quantity{
+  font-weight: normal;
+}
+
+.order-detail .total{
+  color: #333;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.order-detail .total span{
+  font-size: 12px;
+  font-weight: 600;
+
+  margin-right: 8px;
+}
